@@ -1,0 +1,8 @@
+@startuml
+[*] --> EnProduction
+EnProduction --> EnMaintenance: planifierMaintenance()
+EnMaintenance --> EnPanne: detecterPanne()
+EnPanne --> EnAttente: attendreReparation()
+EnAttente --> EnProduction: reparer()
+EnProduction --> [*]
+@enduml

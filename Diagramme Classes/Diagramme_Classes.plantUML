@@ -1,0 +1,58 @@
+@startuml
+class OrdreProduction {
+    +id: int
+    +dateCreation: Date
+    +statut: String
+    +creerOrdre()
+    +validerOrdre()
+    +lancerProduction()
+    +suivreAvancement()
+}
+
+class LigneProduction {
+    +id: int
+    +nom: String
+    +etat: String
+    +demarrerLigne()
+    +arreterLigne()
+    +suivreEtat()
+}
+
+class ControlQualite {
+    +id: int
+    +nom: String
+    +effectuerControle()
+    +validerControle()
+}
+
+class NonConformite {
+    +id: int
+    +description: String
+    +dateDetection: Date
+    +analyserNonConformite()
+    +prendreActionsCorrectives()
+}
+
+class Maintenance {
+    +id: int
+    +description: String
+    +datePlanification: Date
+    +planifierMaintenance()
+    +effectuerMaintenance()
+}
+
+class Equipement {
+    +id: int
+    +nom: String
+    +etat: String
+    +demarrerEquipement()
+    +arreterEquipement()
+    +suivreEtat()
+}
+
+OrdreProduction "1" -- "1..*" LigneProduction : contient
+LigneProduction "1" -- "0..*" Equipement : utilise
+LigneProduction "1" -- "1" ControlQualite : supervise
+ControlQualite "1" -- "0..1" NonConformite : detecte
+Maintenance "1" -- "0..*" Equipement : planifie
+@enduml

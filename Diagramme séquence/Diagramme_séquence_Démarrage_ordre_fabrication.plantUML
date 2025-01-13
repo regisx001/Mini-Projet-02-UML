@@ -1,0 +1,15 @@
+@startuml
+actor OperateurProduction as OP
+participant OrdreProduction as OPD
+participant LigneProduction as LP
+
+OP -> OPD: creerOrdre()
+OPD -> OP: ordreCree()
+OP -> OPD: validerOrdre()
+OPD -> OP: ordreValide()
+OP -> LP: lancerProduction()
+LP -> OP: productionLancee()
+OP -> LP: suivreAvancement()
+LP -> OP: avancementSuivi()
+@enduml
+

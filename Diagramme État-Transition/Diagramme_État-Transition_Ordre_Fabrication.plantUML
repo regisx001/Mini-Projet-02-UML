@@ -1,0 +1,9 @@
+@startuml
+[*] --> Créé
+Créé --> Planifié: planifier()
+Planifié --> EnCours: lancer()
+EnCours --> Terminé: terminer()
+EnCours --> Annulé: annuler()
+Terminé --> [*]
+Annulé --> [*]
+@enduml

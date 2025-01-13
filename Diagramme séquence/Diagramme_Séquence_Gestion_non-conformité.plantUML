@@ -1,0 +1,14 @@
+@startuml
+actor EquipeQualite as EQ
+participant ControlQualite as CQ
+participant NonConformite as NC
+
+EQ -> CQ: effectuerControle()
+CQ -> EQ: controleEffectue()
+CQ -> NC: detecterNonConformite()
+NC -> EQ: nonConformiteDetectee()
+EQ -> NC: analyserNonConformite()
+NC -> EQ: analyseEffectuee()
+EQ -> NC: prendreActionsCorrectives()
+NC -> EQ: actionsCorrectivesPrises()
+@enduml

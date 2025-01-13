@@ -1,0 +1,9 @@
+@startuml
+|EquipeQualite|
+start
+:Points de contrôle;
+:Critères d'acceptation;
+:Actions correctives;
+:Validation;
+stop
+@enduml

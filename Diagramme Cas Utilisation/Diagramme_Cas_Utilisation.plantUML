@@ -1,0 +1,24 @@
+@startuml
+actor OperateurProduction as OP
+actor Superviseur as SUP
+actor EquipeQualite as EQ
+actor EquipeMaintenance as EM
+actor Direction as DIR
+
+usecase UC1 as "Gérer les ordres de fabrication"
+usecase UC2 as "Superviser la production"
+usecase UC3 as "Gérer les non-conformités"
+usecase UC4 as "Planifier la maintenance"
+usecase UC5 as "Générer des rapports"
+
+OP -> UC1
+SUP -> UC2
+EQ -> UC3
+EM -> UC4
+DIR -> UC5
+
+UC1 <-- SUP : Consulter
+UC2 <-- DIR : Consulter
+UC3 <-- SUP : Consulter
+UC4 <-- SUP : Consulter
+@enduml

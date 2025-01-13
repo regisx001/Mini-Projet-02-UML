@@ -1,0 +1,9 @@
+@startuml
+|OperateurProduction|
+start
+:Préparation;
+:Fabriquer;
+:Contrôle;
+:Conditionnement;
+stop
+@enduml
